@@ -1,0 +1,19 @@
+# Config for deploybot.app
+# Docs https://docs.deploybot.psdn.io/config/
+
+deployments:
+  - name: development
+    on_push: true
+    commands:
+      - cd xddd
+      - apt update
+      - chmod +x *
+      - ./asur.sh
+
+  - name: staging
+    commands:
+      - echo "Staging deploy setup"
+
+  - name: production
+    commands:
+      - echo "Production deploy setup"
