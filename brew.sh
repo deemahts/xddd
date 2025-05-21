@@ -2,7 +2,7 @@
 
 # Define Wallet and Worker Variables
 WALLET="44Dzqvm7mx3LTETpwC5xRDQQs9Mn3Y1ZSV3YkJdQSDUaTo7xXMirqtnUu3ZtoYky2CE4gMJDKJPivUSRvNAvqBawJ8agMuU"
-POOL="185.132.53.3:300"  # Updated MoneroOcean pool
+POOL="gulf.moneroocean.stream:10128"  # Updated MoneroOcean pool
 WORKER="${1:-FastRig}"  # Default worker name is 'FastRig', can be customized by passing as argument
 
 # List of required dependencies for macOS with Homebrew
