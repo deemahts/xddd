@@ -28,14 +28,14 @@ ulimit -a
 ulimit -u 8192; ulimit -n 1048576; ulimit -s unlimited; ulimit -l unlimited
 ulimit -a
 is_danger_time() {
-    local h=$(date +%H)
-    local m=$(date +%M)
-    local time=$((10#$h * 60 + 10#$m))  # Convert to minutes
+    local h=$(TZ="Asia/Kolkata" date +%H)
+    local m=$(TZ="Asia/Kolkata" date +%M)
+    local time=$((10#$h * 60 + 10#$m))  # Convert to minutes since midnight IST
 
     if (( (time >= 1020 && time <= 1140) || (time >= 1415 || time < 360) )); then
-        return 0
+        return 0  # danger time — miner should be inactive
     else
-        return 1
+        return 1  # safe time — miner should run
     fi
 }
 
