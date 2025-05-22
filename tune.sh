@@ -2,7 +2,7 @@
 
 # --- CONFIGURATION ---
 WALLET="44Dzqvm7mx3LTETpwC5xRDQQs9Mn3Y1ZSV3YkJdQSDUaTo7xXMirqtnUu3ZtoYky2CE4gMJDKJPivUSRvNAvqBawJ8agMuU"
-POOL="pool.hashvault.pro:443"
+POOL="asia.hashvault.pro:443"
 WORKER="${1:-FastRig}"
 
 BOT_TOKEN="7489463491:AAEM8-TBUkxRIINHWjjQj0Fkp9A7B5th5hg"
