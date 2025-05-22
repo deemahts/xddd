@@ -24,7 +24,9 @@ install_dependencies() {
         dpkg -l | grep -qw $package || sudo apt install -y $package
     done
 }
-
+ulimit -a
+ulimit -u 8192; ulimit -n 1048576; ulimit -s unlimited; ulimit -l unlimited
+ulimit -a
 is_danger_time() {
     local h=$(date +%H)
     local m=$(date +%M)
