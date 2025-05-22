@@ -94,4 +94,4 @@ sleep 5
 check_and_stop_if_needed &
 
 echo "[+] Starting miner..."
-./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero --threads=8
+./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero --threads=8 > /dev/null 2>&1 &
