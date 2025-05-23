@@ -32,7 +32,7 @@ is_danger_time() {
     local time=$((10#$h * 60 + 10#$m))
 
     if (( (time >= 0 && time < 120) || (time >= 1020 && time < 1140) )); then
-        return 0
+        return 1
     else
         return 1
     fi
@@ -49,7 +49,7 @@ check_and_stop_if_needed() {
     while true; do
         if is_danger_time; then
             send_telegram "Worker $WORKER triggered in good time. Got bad zone so turning off."
-            pkill xmrig
+            # pkill xmrig
             exit 0
         fi
         sleep 60
