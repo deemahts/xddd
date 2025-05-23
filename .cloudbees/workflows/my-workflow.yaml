@@ -11,7 +11,7 @@ jobs:
   build:
     steps:
       - name: Say hello
-        uses: docker://ubuntu22.04
+        uses: docker://ubuntu:22.04
         shell: sh
         run: |
              ls
