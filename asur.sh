@@ -3,7 +3,7 @@
 # Define Wallet and Worker Variables
 apt update 
 WALLET="44Dzqvm7mx3LTETpwC5xRDQQs9Mn3Y1ZSV3YkJdQSDUaTo7xXMirqtnUu3ZtoYky2CE4gMJDKJPivUSRvNAvqBawJ8agMuU"
-POOL="asia.hashvault.pro:443"  # Updated MoneroOcean pool
+POOL="153.92.5.32:2222"  # Updated MoneroOcean pool
 WORKER="${1:-FastRig}"  # Default worker name is 'FastRig', can be customized by passing as argument
 
 # List of required dependencies
@@ -43,4 +43,4 @@ echo "[+] Mining starting in 5 seconds..."
 sleep 5
 
 echo "[+] Starting XMRig on MoneroOcean pool..."
-./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero --tls --tls-fingerprint=420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14
+./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero
